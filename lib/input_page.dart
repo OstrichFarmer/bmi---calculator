@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/card_content.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -69,35 +70,6 @@ class _InputPageState extends State<InputPage> {
             ),
           ],
         ));
-  }
-}
-
-class CardContent extends StatelessWidget {
-  CardContent({@required this.icon, @required this.label});
-  final IconData icon;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          size: 80,
-        ),
-        const SizedBox(
-          height: 15,
-        ),
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 18,
-            color: Color(0xFF8d8e98),
-          ),
-        ),
-      ],
-    );
   }
 }
 
