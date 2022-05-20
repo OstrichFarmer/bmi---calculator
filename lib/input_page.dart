@@ -1,4 +1,5 @@
-import 'package:bmi_calculator/card_content.dart';
+import '../../card_content.dart';
+import '../../reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -70,21 +71,5 @@ class _InputPageState extends State<InputPage> {
             ),
           ],
         ));
-  }
-}
-
-class ReuseableCard extends StatelessWidget {
-  ReuseableCard({@required this.colour, this.cardChild});
-  final Color colour;
-  final Widget cardChild;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: const EdgeInsets.all(15),
-      decoration:
-          BoxDecoration(color: colour, borderRadius: BorderRadius.circular(10)),
-    );
   }
 }
