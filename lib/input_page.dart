@@ -1,3 +1,4 @@
+import '../../round_icon_button.dart';
 import '../../constants.dart';
 import '../../card_content.dart';
 import '../../reusable_card.dart';
@@ -132,12 +133,22 @@ class _InputPageState extends State<InputPage> {
                             children: [
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
+                                onpressed: () {
+                                  setState(() {
+                                    weight = weight - 1;
+                                  });
+                                },
                               ),
                               const SizedBox(
                                 width: 10,
                               ),
                               RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
+                                onpressed: () {
+                                  setState(() {
+                                    weight = weight + 1;
+                                  });
+                                },
                               ),
                             ],
                           ),
@@ -161,21 +172,5 @@ class _InputPageState extends State<InputPage> {
             ),
           ],
         ));
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon});
-  final IconData icon;
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      fillColor: const Color(0XFF4C4F5E),
-      child: Icon(icon),
-      onPressed: () {},
-      elevation: 6,
-      shape: const CircleBorder(),
-      constraints: const BoxConstraints.tightFor(height: 54, width: 54),
-    );
   }
 }
