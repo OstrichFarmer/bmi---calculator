@@ -1,5 +1,4 @@
 import '../../constants.dart';
-
 import '../../card_content.dart';
 import '../../reusable_card.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +16,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+  int height = 150;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +25,7 @@ class _InputPageState extends State<InputPage> {
           title: const Text('BMI CALCULATOR'),
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
                 child: Row(
@@ -41,8 +42,8 @@ class _InputPageState extends State<InputPage> {
                       label: 'MALE',
                     ),
                     colour: selectedGender == Gender.male
-                        ? activeCardColor
-                        : inactiveCardColor,
+                        ? kActiveCardColor
+                        : kInactiveCardColor,
                   ),
                 ),
                 Expanded(
@@ -57,14 +58,46 @@ class _InputPageState extends State<InputPage> {
                     label: 'FEMALE',
                   ),
                   colour: selectedGender == Gender.female
-                      ? activeCardColor
-                      : inactiveCardColor,
+                      ? kActiveCardColor
+                      : kInactiveCardColor,
                 ))
               ],
             )),
             Expanded(
               child: ReuseableCard(
-                colour: activeCardColor,
+                colour: kActiveCardColor,
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'HEIGHT',
+                      style: kLabelTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: [
+                        Text(height.toString(), style: kNumberTextStyle),
+                        const Text(
+                          'cm',
+                          style: kLabelTextStyle,
+                        )
+                      ],
+                    ),
+                    Slider(
+                        activeColor: const Color(0XFFEB1555),
+                        inactiveColor: const Color(0XFF8D8E98),
+                        value: height.toDouble(),
+                        min: kMinimumHeight,
+                        max: kMaximumHeight,
+                        onChanged: (double newValue) {
+                          setState(() {
+                            height = newValue.round();
+                          });
+                        })
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -72,21 +105,21 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReuseableCard(
-                      colour: activeCardColor,
+                      colour: kActiveCardColor,
                     ),
                   ),
                   Expanded(
                     child: ReuseableCard(
-                      colour: activeCardColor,
+                      colour: kActiveCardColor,
                     ),
                   )
                 ],
               ),
             ),
             Container(
-              height: bottomContainerHeight,
+              height: kBottomContainerHeight,
               width: double.infinity,
-              color: bottomContainerColor,
+              color: kBottomContainerColor,
               margin: const EdgeInsets.only(top: 10),
             ),
           ],
