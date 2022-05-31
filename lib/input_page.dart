@@ -19,6 +19,7 @@ class _InputPageState extends State<InputPage> {
   Gender selectedGender;
   int height = 150;
   int weight = 50;
+  int age = 18;
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +136,7 @@ class _InputPageState extends State<InputPage> {
                                 icon: FontAwesomeIcons.minus,
                                 onpressed: () {
                                   setState(() {
-                                    weight = weight - 1;
+                                    weight--;
                                   });
                                 },
                               ),
@@ -146,7 +147,7 @@ class _InputPageState extends State<InputPage> {
                                 icon: FontAwesomeIcons.plus,
                                 onpressed: () {
                                   setState(() {
-                                    weight = weight + 1;
+                                    weight++;
                                   });
                                 },
                               ),
@@ -159,6 +160,44 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReuseableCard(
                       colour: kActiveCardColor,
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'AGE',
+                            style: kLabelTextStyle,
+                          ),
+                          Text(
+                            age.toString(),
+                            style: kNumberTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onpressed: () {
+                                  setState(() {
+                                    age--;
+                                  });
+                                },
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onpressed: () {
+                                  setState(() {
+                                    ;
+                                    age++;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 ],
