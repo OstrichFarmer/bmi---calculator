@@ -1,3 +1,5 @@
+import 'package:bmi_calculator/result_page.dart';
+
 import '../../round_icon_button.dart';
 import '../../constants.dart';
 import '../../card_content.dart';
@@ -190,7 +192,6 @@ class _InputPageState extends State<InputPage> {
                                 icon: FontAwesomeIcons.plus,
                                 onpressed: () {
                                   setState(() {
-                                    ;
                                     age++;
                                   });
                                 },
@@ -204,11 +205,22 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              height: kBottomContainerHeight,
-              width: double.infinity,
-              color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 10),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, ResultPage.id);
+              },
+              child: Container(
+                child: const Center(
+                  child: Text(
+                    'CALCULATE YOUR BMI',
+                    style: kLargeButtonTextStyle,
+                  ),
+                ),
+                height: kBottomContainerHeight,
+                width: double.infinity,
+                color: kBottomContainerColor,
+                margin: const EdgeInsets.only(top: 10),
+              ),
             ),
           ],
         ));
