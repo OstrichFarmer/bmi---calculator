@@ -32,7 +32,16 @@ class ResultPage extends StatelessWidget {
                   Text(
                     'Normal',
                     style: kResultTextStyle,
-                  )
+                  ),
+                  Text(
+                    '78',
+                    style: kBMITextStyle,
+                  ),
+                  Text(
+                    'Your BMI is quite low, you should eat more',
+                    textAlign: TextAlign.center,
+                    style: kBodyTextStyle,
+                  ),
                 ],
               ),
             ),
