@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/bottom_button.dart';
 import 'package:bmi_calculator/result_page.dart';
 
 import '../../round_icon_button.dart';
@@ -212,32 +213,6 @@ class _InputPageState extends State<InputPage> {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class BottomButton extends StatelessWidget {
-  BottomButton({@required this.onTap, @required this.buttonTitle});
-
-  final Function onTap;
-  final String buttonTitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        child: const Center(
-          child: Text(
-            buttonTitle,
-            style: kLargeButtonTextStyle,
-          ),
-        ),
-        height: kBottomContainerHeight,
-        width: double.infinity,
-        color: kBottomContainerColor,
-        margin: const EdgeInsets.only(top: 10),
       ),
     );
   }
