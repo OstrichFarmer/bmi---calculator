@@ -1,10 +1,10 @@
-import 'package:bmi_calculator/bottom_button.dart';
-import 'package:bmi_calculator/result_page.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/screens/result_page.dart';
 
-import '../../round_icon_button.dart';
-import '../../constants.dart';
-import '../../card_content.dart';
-import '../../reusable_card.dart';
+import '../../components/round_icon_button.dart';
+import '../../components/constants.dart';
+import '../../components/card_content.dart';
+import '../../components/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
