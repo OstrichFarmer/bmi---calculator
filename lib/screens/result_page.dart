@@ -10,9 +10,9 @@ class ResultPage extends StatelessWidget {
       @required this.interpretation,
       @required this.resultText});
 
-  final bmiResult;
-  final resultText;
-  final interpretation;
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
 
   static const String id = "resultpage";
   @override

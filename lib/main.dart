@@ -1,3 +1,5 @@
+// ignore_for_file: missing_required_param
+
 import 'package:bmi_calculator/screens/result_page.dart';
 import 'package:flutter/material.dart';
 
